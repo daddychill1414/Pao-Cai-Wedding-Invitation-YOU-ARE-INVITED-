@@ -320,19 +320,51 @@ button {
 .landing-top-left,
 .landing-top-right {
   position: absolute;
-  top: var(--space-lg);
+  top: var(--space-md);
   font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
+  font-size: clamp(0.5rem, 2.2vw, 0.65rem);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(240, 234, 224, 0.9);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  line-height: 1.6;
+  color: rgba(240, 234, 224, 0.95);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  line-height: 1.5;
   z-index: 5;
+  max-width: 45%;
+  word-break: break-word;
 }
 
-.landing-top-left { left: var(--space-lg); text-align: left; }
-.landing-top-right { right: var(--space-lg); text-align: right; }
+.landing-top-left { 
+  left: var(--space-md); 
+  text-align: left; 
+}
+
+.landing-top-right { 
+  right: var(--space-md); 
+  text-align: right; 
+}
+
+@media (min-width: 768px) {
+  .landing-top-left,
+  .landing-top-right {
+    top: var(--space-lg);
+    letter-spacing: 0.25em;
+  }
+  .landing-top-left { left: var(--space-lg); }
+  .landing-top-right { right: var(--space-lg); }
+}
+
+@media (max-width: 480px) {
+  .landing-top-left,
+  .landing-top-right {
+    top: 0.75rem;
+    font-size: 0.52rem;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    max-width: 46%;
+  }
+  .landing-top-left { left: 0.65rem; }
+  .landing-top-right { right: 0.65rem; }
+}
 
 .landing-center-content {
   position: relative;
@@ -346,7 +378,7 @@ button {
 
 .landing-title-names {
   font-family: var(--font-script);
-  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  font-size: clamp(2.6rem, 9vw, 7.5rem);
   font-weight: 400;
   color: #FFFDF8;
   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8), 0 0 40px rgba(196, 168, 130, 0.4);
@@ -2413,6 +2445,17 @@ button {
 /* Prevent body scroll when lightbox or invitation is open */
 body.no-scroll {
   overflow: hidden;
+}
+
+/* Prevent accidental text selection, long-press callouts, and tap highlights on mobile */
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, button, a, .landing-bg-wrapper, .hero-section, .inv-screen {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Reduced motion */
