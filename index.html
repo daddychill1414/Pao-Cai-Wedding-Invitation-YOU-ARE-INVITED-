@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Pao & Cai � Wedding Celebration</title>
+  <meta name="description" content="You are warmly invited to celebrate the wedding of Pao and Cai. A sunrise garden celebration at Por La Gracia Resort, Alfonso, Cavite." />
+  <meta name="theme-color" content="#F0EAE0" />
+
+  <!-- Favicon / Tab Bar Logo -->
+  <link rel="icon" type="image/png" href="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" />
+  <link rel="apple-touch-icon" href="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Pinyon+Script&family=Aboreto&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- NOISE OVERLAY — premium texture                    -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <svg class="noise-overlay" aria-hidden="true">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+  </svg>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- FLOATING PARTICLES — subtle floating elements      -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div id="particles-container" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PHASE 1: INVITATION EXPERIENCE                     -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div id="invitation-experience" class="phase active">
+
+    <!-- SCREEN 1: THE ENVELOPE / LANDING -->
+    <section id="envelope-screen" class="inv-screen active">
+      <div class="landing-bg-wrapper">
+        <img src="/images/SaveClip.App_509928587_17888665662272043_607505479076218957_n-2.jpg" alt="Dark floral background" class="landing-bg-image" />
+        <div class="landing-bg-overlay"></div>
+      </div>
+
+      <!-- Corner Details (Matching Screenshot) -->
+      <div class="landing-top-left">
+        <p>POR LA GRACIA RESORT,</p>
+        <p>ALFONSO, CAVITE</p>
+      </div>
+
+      <div class="landing-top-right">
+        <p>DECEMBER 18, 2026</p>
+        <p>FRIDAY</p>
+      </div>
+
+      <!-- Center Hero Content -->
+      <div class="landing-center-content">
+        <div class="landing-logo-wrapper">
+          <img src="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" alt="Pao & Cai Calligraphy Monogram" class="landing-logo-img" />
+        </div>
+        <h1 class="landing-title-names">
+          <span>Pao</span>
+          <span class="landing-ampersand">&</span>
+          <span>Cai</span>
+        </h1>
+        <p class="landing-subtitle">ARE GETTING MARRIED</p>
+        <button id="open-envelope-btn" class="landing-btn-open" aria-label="Open Invitation">
+          OPEN
+        </button>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: THE RSVP MOMENT -->
+    <section id="rsvp-screen" class="inv-screen">
+      <div class="landing-bg-wrapper">
+        <img src="/images/SaveClip.App_509928587_17888665662272043_607505479076218957_n.jpg" alt="Rich floral background" class="landing-bg-image" />
+        <div class="landing-bg-overlay"></div>
+      </div>
+      <div class="rsvp-moment-wrapper">
+        <div class="rsvp-moment-ornament">&#10022;</div>
+        <h2 class="rsvp-moment-title">Will you celebrate<br>with us?</h2>
+        <p class="rsvp-moment-subtitle">Your presence would mean the world to us</p>
+        <div class="rsvp-moment-names">
+          <span class="script-name">Pao</span>
+          <span class="ampersand">&</span>
+          <span class="script-name">Cai</span>
+        </div>
+        <div class="rsvp-moment-buttons">
+          <button id="accept-btn" class="btn-rsvp btn-accept">
+            <span>Joyfully Accept</span>
+          </button>
+          <button id="decline-btn" class="btn-rsvp btn-decline">
+            <span>Regretfully Decline</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: ACCEPTANCE CELEBRATION -->
+    <section id="acceptance-screen" class="inv-screen">
+      <div class="acceptance-wrapper">
+        <div class="acceptance-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+            <path d="M20 32L28 40L44 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-path"/>
+          </svg>
+        </div>
+        <p class="acceptance-overline">Your place in our story is reserved</p>
+        <h2 class="acceptance-title">We're so happy<br>you'll be there</h2>
+        <div class="acceptance-divider"></div>
+        <div class="acceptance-couple">
+          <span class="script-name">Pao</span>
+          <span class="ampersand">&</span>
+          <span class="script-name">Cai</span>
+        </div>
+        <p class="acceptance-date">A Sunrise Celebration</p>
+        <p class="acceptance-venue">Por La Gracia Resort, Alfonso, Cavite</p>
+        <button id="explore-btn" class="btn-invitation">
+          <span class="btn-text">Explore Our Wedding</span>
+          <span class="btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3b: DECLINE -->
+    <section id="decline-screen" class="inv-screen">
+      <div class="decline-wrapper">
+        <div class="decline-ornament">&#10022;</div>
+        <h2 class="decline-title">We'll miss you</h2>
+        <p class="decline-text">We understand, and we appreciate you letting us know. You'll be in our thoughts on our special day.</p>
+        <div class="decline-couple">
+          <span class="script-name">Pao</span>
+          <span class="ampersand">&</span>
+          <span class="script-name">Cai</span>
+        </div>
+        <button id="explore-anyway-btn" class="btn-invitation btn-subtle">
+          <span class="btn-text">View Our Wedding</span>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PHASE 2: WEDDING WEBSITE                           -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div id="wedding-website" class="phase">
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav" class="nav-bar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <img src="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" alt="P & C" class="nav-logo-img" />
+        </a>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#story" class="nav-link">Our Story</a>
+          <a href="#details" class="nav-link">Details</a>
+          <a href="#timeline" class="nav-link">Schedule</a>
+          <a href="#dresscode" class="nav-link">Dress Code</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSesmtOVVug9d8r8fJIqa6F9OWNq6gi1jkw3E60hm1Naxfc8CA/viewform" target="_blank" rel="noopener" class="nav-link nav-cta">RSVP</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-nav" class="mobile-nav-overlay">
+      <div class="mobile-nav-content">
+        <a href="#story" class="mobile-nav-link">Our Story</a>
+        <a href="#details" class="mobile-nav-link">Details</a>
+        <a href="#timeline" class="mobile-nav-link">Schedule</a>
+        <a href="#dresscode" class="mobile-nav-link">Dress Code</a>
+        <a href="#gallery" class="mobile-nav-link">Gallery</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSesmtOVVug9d8r8fJIqa6F9OWNq6gi1jkw3E60hm1Naxfc8CA/viewform" target="_blank" rel="noopener" class="mobile-nav-link mobile-nav-cta">RSVP</a>
+      </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-bg">
+        <img src="/images/SaveClip.App_509928587_17888665662272043_607505479076218957_n-2.jpg" alt="Sepia floral texture" class="hero-bg-image" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-logo-wrapper reveal-up">
+          <img src="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" alt="P & C Calligraphy Monogram" class="hero-logo-img" />
+        </div>
+        <p class="hero-overline reveal-up">Together with their families</p>
+        <div class="hero-names reveal-up">
+          <h1 class="hero-name hero-name-bride">Pao</h1>
+          <span class="hero-ampersand">&</span>
+          <h1 class="hero-name hero-name-groom">Cai</h1>
+        </div>
+        <div class="hero-divider reveal-up"></div>
+        <p class="hero-tagline reveal-up">A Sunrise Celebration of Love</p>
+        <p class="hero-venue-line reveal-up">Por La Gracia Resort · Alfonso, Cavite</p>
+      </div>
+      <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- COUPLE / OUR STORY -->
+    <section id="story" class="section story-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline reveal-up">The Beginning</span>
+          <h2 class="section-title reveal-up">Our Story</h2>
+          <div class="section-line reveal-up"></div>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-image-col reveal-up">
+            <div class="story-image-frame">
+              <img src="/images/831436053_2466880237172198_5599499902861501884_n.jpg" alt="Pao and Cai together" class="story-img" loading="lazy" />
+            </div>
+          </div>
+          <div class="story-text-col">
+            <div class="story-block reveal-up">
+              <span class="story-label">How We Met</span>
+              <p class="story-text">Some love stories begin with a grand gesture, but ours started with a simple hello. A chance encounter that turned into lingering conversations, shared laughter, and a connection that felt like it had always been there — waiting for the right moment to unfold.</p>
+            </div>
+            <div class="story-block reveal-up">
+              <span class="story-label">Growing Together</span>
+              <p class="story-text">Through every sunrise and sunset, every ordinary day turned extraordinary — we found in each other not just a partner, but a best friend. We've built something beautiful together, one quiet moment at a time.</p>
+            </div>
+            <div class="story-block reveal-up">
+              <span class="story-label">Forever Begins</span>
+              <p class="story-text">And now, as the sun rises on this new chapter of our lives, we invite you to witness the moment we say "I do." Because every great love story deserves an audience — and ours wouldn't be complete without you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEDDING DETAILS & STORYBOARD -->
+    <section id="details" class="section details-section">
+      <div class="details-bg-texture">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline reveal-up">The Journey</span>
+          <h2 class="section-title reveal-up">Wedding Day Storyboard</h2>
+          <div class="section-line reveal-up"></div>
+          <p class="section-subtitle reveal-up">An early morning sunrise celebration of love at Por La Gracia Resort</p>
+        </div>
+
+        <div class="storyboard-grid">
+          <!-- Step 1: Arrival -->
+          <div class="storyboard-card reveal-up" data-step="01">
+            <div class="card-step-badge">ACT I</div>
+            <div class="storyboard-icon">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6V12L16 14"/>
+              </svg>
+            </div>
+            <h3 class="storyboard-title">Guest Arrival</h3>
+            <span class="storyboard-time">6:00 AM</span>
+            <p class="storyboard-desc">Step into the morning garden air as soft music plays. Settle into your seats as the first light breaks over Cavite.</p>
+            <div class="storyboard-tag">Please arrive by 6:00 AM</div>
+          </div>
+
+          <!-- Step 2: Sunrise Ceremony -->
+          <div class="storyboard-card reveal-up" data-step="02">
+            <div class="card-step-badge">ACT II</div>
+            <div class="storyboard-icon">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                <path d="M2 17L12 22L22 17"/>
+                <path d="M2 12L12 17L22 12"/>
+              </svg>
+            </div>
+            <h3 class="storyboard-title">Sunrise Ceremony</h3>
+            <span class="storyboard-time">6:30 AM</span>
+            <p class="storyboard-desc">As golden hour lights the sky, Pao & Cai exchange lifelong vows and rings under the garden canopy.</p>
+          </div>
+
+          <!-- Step 3: Photos & Garden Stroll -->
+          <div class="storyboard-card reveal-up" data-step="03">
+            <div class="card-step-badge">ACT III</div>
+            <div class="storyboard-icon">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="18" rx="2"/>
+                <circle cx="8.5" cy="10.5" r="2.5"/>
+                <path d="M14 15L10 19H20L16 12L14 15Z"/>
+              </svg>
+            </div>
+            <h3 class="storyboard-title">Garden Portraits</h3>
+            <span class="storyboard-time">8:00 AM</span>
+            <p class="storyboard-desc">Capture lasting memories with family and friends amidst morning dew and lush garden scenery.</p>
+            <div class="storyboard-tag">Group & Couple Portraits</div>
+          </div>
+
+          <!-- Step 4: Breakfast Feast -->
+          <div class="storyboard-card reveal-up" data-step="04">
+            <div class="card-step-badge">ACT IV</div>
+            <div class="storyboard-icon">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 8H19C20.1 8 21 8.9 21 10V14C21 15.1 20.1 16 19 16H18"/>
+                <path d="M2 8H18V17C18 18.1 17.1 19 16 19H4C2.9 19 2 18.1 2 17V8Z"/>
+                <path d="M6 1V4M10 1V4M14 1V4"/>
+              </svg>
+            </div>
+            <h3 class="storyboard-title">Breakfast Reception</h3>
+            <span class="storyboard-time">8:20 AM</span>
+            <p class="storyboard-desc">Indulge in a warm morning feast, freshly brewed coffee, and heartfelt toasts celebrating the newlyweds.</p>
+            <div class="storyboard-tag">Feast & Celebration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section timeline-section">
+      <div class="container">
+        <div class="tl-card reveal-up">
+
+          <!-- Floral Corner Decorations -->
+          <div class="tl-floral tl-floral--tl" aria-hidden="true">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#C4A882" stroke-width="0.8" opacity="0.75">
+                <circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="6"/>
+                <circle cx="45" cy="18" r="9"/><circle cx="45" cy="18" r="4"/>
+                <circle cx="18" cy="45" r="9"/><circle cx="18" cy="45" r="4"/>
+                <circle cx="65" cy="22" r="7"/><circle cx="65" cy="22" r="3"/>
+                <circle cx="22" cy="65" r="7"/><circle cx="22" cy="65" r="3"/>
+                <line x1="20" y1="20" x2="45" y2="18"/>
+                <line x1="20" y1="20" x2="18" y2="45"/>
+                <line x1="45" y1="18" x2="65" y2="22"/>
+                <line x1="18" y1="45" x2="22" y2="65"/>
+                <path d="M10 10 Q20 5 30 12 Q25 20 15 18 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M35 8 Q45 2 55 10 Q50 18 40 16 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M8 35 Q2 45 10 55 Q18 50 16 40 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M55 15 Q65 8 75 16 Q70 25 60 22 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M15 55 Q8 65 16 75 Q25 70 22 60 Z" fill="rgba(196,168,130,0.18)"/>
+                <circle cx="78" cy="25" r="5"/>
+                <circle cx="25" cy="78" r="5"/>
+                <line x1="65" y1="22" x2="78" y2="25"/>
+                <line x1="22" y1="65" x2="25" y2="78"/>
+              </g>
+            </svg>
+          </div>
+          <div class="tl-floral tl-floral--tr" aria-hidden="true">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#C4A882" stroke-width="0.8" opacity="0.75" transform="scale(-1,1) translate(-120,0)">
+                <circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="6"/>
+                <circle cx="45" cy="18" r="9"/><circle cx="45" cy="18" r="4"/>
+                <circle cx="18" cy="45" r="9"/><circle cx="18" cy="45" r="4"/>
+                <circle cx="65" cy="22" r="7"/><circle cx="65" cy="22" r="3"/>
+                <circle cx="22" cy="65" r="7"/><circle cx="22" cy="65" r="3"/>
+                <line x1="20" y1="20" x2="45" y2="18"/>
+                <line x1="20" y1="20" x2="18" y2="45"/>
+                <line x1="45" y1="18" x2="65" y2="22"/>
+                <line x1="18" y1="45" x2="22" y2="65"/>
+                <path d="M10 10 Q20 5 30 12 Q25 20 15 18 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M35 8 Q45 2 55 10 Q50 18 40 16 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M8 35 Q2 45 10 55 Q18 50 16 40 Z" fill="rgba(196,168,130,0.18)"/>
+                <circle cx="78" cy="25" r="5"/>
+                <circle cx="25" cy="78" r="5"/>
+                <line x1="65" y1="22" x2="78" y2="25"/>
+                <line x1="22" y1="65" x2="25" y2="78"/>
+              </g>
+            </svg>
+          </div>
+          <div class="tl-floral tl-floral--bl" aria-hidden="true">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#C4A882" stroke-width="0.8" opacity="0.75" transform="scale(1,-1) translate(0,-120)">
+                <circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="6"/>
+                <circle cx="45" cy="18" r="9"/><circle cx="45" cy="18" r="4"/>
+                <circle cx="18" cy="45" r="9"/><circle cx="18" cy="45" r="4"/>
+                <circle cx="65" cy="22" r="7"/><circle cx="65" cy="22" r="3"/>
+                <circle cx="22" cy="65" r="7"/><circle cx="22" cy="65" r="3"/>
+                <line x1="20" y1="20" x2="45" y2="18"/>
+                <line x1="20" y1="20" x2="18" y2="45"/>
+                <line x1="45" y1="18" x2="65" y2="22"/>
+                <line x1="18" y1="45" x2="22" y2="65"/>
+                <path d="M10 10 Q20 5 30 12 Q25 20 15 18 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M35 8 Q45 2 55 10 Q50 18 40 16 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M8 35 Q2 45 10 55 Q18 50 16 40 Z" fill="rgba(196,168,130,0.18)"/>
+                <circle cx="78" cy="25" r="5"/>
+                <circle cx="25" cy="78" r="5"/>
+                <line x1="65" y1="22" x2="78" y2="25"/>
+                <line x1="22" y1="65" x2="25" y2="78"/>
+              </g>
+            </svg>
+          </div>
+          <div class="tl-floral tl-floral--br" aria-hidden="true">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#C4A882" stroke-width="0.8" opacity="0.75" transform="scale(-1,-1) translate(-120,-120)">
+                <circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="6"/>
+                <circle cx="45" cy="18" r="9"/><circle cx="45" cy="18" r="4"/>
+                <circle cx="18" cy="45" r="9"/><circle cx="18" cy="45" r="4"/>
+                <circle cx="65" cy="22" r="7"/><circle cx="65" cy="22" r="3"/>
+                <circle cx="22" cy="65" r="7"/><circle cx="22" cy="65" r="3"/>
+                <line x1="20" y1="20" x2="45" y2="18"/>
+                <line x1="20" y1="20" x2="18" y2="45"/>
+                <line x1="45" y1="18" x2="65" y2="22"/>
+                <line x1="18" y1="45" x2="22" y2="65"/>
+                <path d="M10 10 Q20 5 30 12 Q25 20 15 18 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M35 8 Q45 2 55 10 Q50 18 40 16 Z" fill="rgba(196,168,130,0.18)"/>
+                <path d="M8 35 Q2 45 10 55 Q18 50 16 40 Z" fill="rgba(196,168,130,0.18)"/>
+                <circle cx="78" cy="25" r="5"/>
+                <circle cx="25" cy="78" r="5"/>
+                <line x1="65" y1="22" x2="78" y2="25"/>
+                <line x1="22" y1="65" x2="25" y2="78"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Card Inner -->
+          <div class="tl-card-inner">
+            <!-- Card Header -->
+            <div class="tl-card-header">
+              <p class="tl-script-title">Wedding Day</p>
+              <p class="tl-block-title">TIMELINE</p>
+              <div class="tl-header-rule"></div>
+            </div>
+
+            <!-- Timeline Table -->
+            <div class="tl-table">
+              <div class="tl-row">
+                <span class="tl-time">6:00 AM</span>
+                <span class="tl-divider">—</span>
+                <span class="tl-event">GUEST ARRIVAL</span>
+              </div>
+              <div class="tl-row">
+                <span class="tl-time">6:30 AM</span>
+                <span class="tl-divider">—</span>
+                <span class="tl-event">WEDDING CEREMONY</span>
+              </div>
+              <div class="tl-row">
+                <span class="tl-time">7:30 AM</span>
+                <span class="tl-divider">—</span>
+                <span class="tl-event">COCKTAIL &amp; GARDEN PHOTOS</span>
+              </div>
+              <div class="tl-row">
+                <span class="tl-time">8:00 AM</span>
+                <span class="tl-divider">—</span>
+                <span class="tl-event">BREAKFAST RECEPTION</span>
+              </div>
+              <div class="tl-row">
+                <span class="tl-time">8:30 AM</span>
+                <span class="tl-divider">—</span>
+                <span class="tl-event">TOASTS &amp; FIRST DANCE</span>
+              </div>
+              <div class="tl-row">
+                <span class="tl-time">9:00 AM</span>
+                <span class="tl-divider">—</span>
+                <span class="tl-event">CAKE CUTTING</span>
+              </div>
+              <div class="tl-row">
+                <span class="tl-time">9:20 AM</span>
+                <span class="tl-divider">—</span>
+                <span class="tl-event">UWIAN NA PO!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section id="dresscode" class="section dresscode-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline reveal-up">What to Wear</span>
+          <h2 class="section-title reveal-up">Dress Code</h2>
+          <div class="section-line reveal-up"></div>
+        </div>
+
+        <div class="dresscode-content">
+          <div class="dresscode-theme reveal-up">
+            <h3 class="dresscode-theme-title">Garden Elegance</h3>
+            <p class="dresscode-theme-text">Kindly follow the color palette below for a soft and elegant look. Ladies are encouraged to wear silk or satin dresses, while gentlemen may wear smart casual attire. Comfortable footwear is recommended for our garden setting.</p>
+          </div>
+
+          <div class="dresscode-palette reveal-up">
+            <h4 class="palette-title">Color Palette</h4>
+            <div class="palette-swatches">
+              <div class="swatch" style="--swatch-color: #5C4033;">
+                <div class="swatch-circle"></div>
+                <span class="swatch-name">Espresso</span>
+              </div>
+              <div class="swatch" style="--swatch-color: #8B6F4E;">
+                <div class="swatch-circle"></div>
+                <span class="swatch-name">Mocha</span>
+              </div>
+              <div class="swatch" style="--swatch-color: #C4A882;">
+                <div class="swatch-circle"></div>
+                <span class="swatch-name">Champagne</span>
+              </div>
+              <div class="swatch" style="--swatch-color: #D4C5A9;">
+                <div class="swatch-circle"></div>
+                <span class="swatch-name">Latte</span>
+              </div>
+              <div class="swatch" style="--swatch-color: #E8DDD0;">
+                <div class="swatch-circle"></div>
+                <span class="swatch-name">Cream</span>
+              </div>
+              <div class="swatch" style="--swatch-color: #A0896C;">
+                <div class="swatch-circle"></div>
+                <span class="swatch-name">Taupe</span>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="dresscode-reference reveal-up">
+            <h4 class="palette-title">Style Reference</h4>
+            <div class="dresscode-ref-image">
+              <img src="/images/Copy of Beige Aesthetic Simple Calligraphy Elegant Wedding Invitation.png" alt="Dress code reference with color palette" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REMINDERS -->
+    <section id="reminders" class="section reminders-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline reveal-up">Please Note</span>
+          <h2 class="section-title reveal-up">Gentle Reminders</h2>
+          <div class="section-line reveal-up"></div>
+        </div>
+
+        <div class="reminders-grid">
+          <div class="reminder-card reveal-up">
+            <div class="reminder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6V12L16 14"/>
+              </svg>
+            </div>
+            <h3>Be on Time</h3>
+            <p>This is a sunrise ceremony. Please arrive by 6:00 AM so we can begin promptly.</p>
+          </div>
+          <div class="reminder-card reveal-up">
+            <div class="reminder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M17 21V19C17 17.9 16.1 17 15 17H9C7.9 17 7 17.9 7 19V21"/>
+                <circle cx="12" cy="11" r="4"/>
+                <path d="M20 8V5M20 5H17M20 5L16 9"/>
+              </svg>
+            </div>
+            <h3>Children & Plus Ones</h3>
+            <p>We've carefully planned our day around a specific number of guests. Please ensure that only you and those included in your invitation attend. Thank you for understanding.</p>
+          </div>
+          <div class="reminder-card reveal-up">
+            <div class="reminder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M20 12V22H4V12"/>
+                <path d="M22 7H2V12H22V7Z"/>
+                <path d="M12 22V7"/>
+                <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z"/>
+                <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z"/>
+              </svg>
+            </div>
+            <h3>Gifts</h3>
+            <p>Your presence is all we could ask, however if you wish to honor us with a gift on our special day, we would greatly appreciate a contribution for our upcoming journey.</p>
+          </div>
+          <div class="reminder-card reveal-up">
+            <div class="reminder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M14.5 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7.5L14.5 2Z"/>
+                <path d="M14 2V8H20"/>
+                <path d="M12 18V12"/>
+                <path d="M9 15H15"/>
+              </svg>
+            </div>
+            <h3>RSVP</h3>
+            <p>Kindly confirm your attendance so we can prepare for your arrival. We look forward to celebrating with you!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline reveal-up">Memories</span>
+          <h2 class="section-title reveal-up">Our Gallery</h2>
+          <div class="section-line reveal-up"></div>
+        </div>
+
+        <!-- Gallery Filters -->
+        <div class="gallery-filters reveal-up">
+          <button class="gallery-filter active" data-filter="all">All Memories</button>
+          <button class="gallery-filter" data-filter="couple">Couple</button>
+          
+        </div>
+
+        <!-- Masonry Gallery � Personal Photos Only -->
+        <div class="gallery-masonry">
+          <div class="gallery-item gallery-item--tall reveal-up" data-category="couple" data-index="0">
+            <img src="/images/831436053_2466880237172198_5599499902861501884_n.jpg" alt="Pao and Cai" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Pao &amp; Cai</span>
+            </div>
+          </div>
+          <div class="gallery-item reveal-up" data-category="couple" data-index="1">
+            <img src="/833271029_1095345126597632_1856815743749724025_n.jpg" alt="Pao and Cai together" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Together</span>
+            </div>
+          </div>
+          <div class="gallery-item gallery-item--wide reveal-up" data-category="couple" data-index="2">
+            <img src="/831503319_1429197485986626_727133233461968038_n.jpg" alt="Pao and Cai � a moment" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Our Moment</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="lightbox-close" aria-label="Close image viewer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6L18 18"/>
+        </svg>
+      </button>
+      <button class="lightbox-prev" aria-label="Previous image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18L9 12L15 6"/>
+        </svg>
+      </button>
+      <button class="lightbox-next" aria-label="Next image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18L15 12L9 6"/>
+        </svg>
+      </button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-counter">
+        <span id="lightbox-current">1</span> / <span id="lightbox-total">3</span>
+      </div>
+    </div>
+
+    <!-- RSVP SECTION -->
+    <section id="rsvp" class="section rsvp-section">
+      <div class="container">
+        <div class="rsvp-card">
+          <div class="rsvp-card-ornament">&#10022;</div>
+          <span class="section-overline reveal-up">We'd Love to Hear From You</span>
+          <h2 class="section-title reveal-up" style="color: var(--color-cream);">RSVP</h2>
+          <div class="section-line reveal-up" style="background: var(--color-gold);"></div>
+          <p class="rsvp-text reveal-up">Kindly confirm your attendance so we can prepare for your arrival. Your response means the world to us.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSesmtOVVug9d8r8fJIqa6F9OWNq6gi1jkw3E60hm1Naxfc8CA/viewform" target="_blank" rel="noopener" class="btn-invitation btn-rsvp-main reveal-up">
+            <span class="btn-text">Confirm Attendance</span>
+            <span class="btn-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-ornament">&#10022;</div>
+          <div class="footer-names">
+            <span class="script-name">Pao</span>
+            <span class="ampersand">&</span>
+            <span class="script-name">Cai</span>
+          </div>
+          <p class="footer-tagline">A Sunrise Celebration of Love</p>
+          <div class="footer-divider"></div>
+          <p class="footer-note">We can't wait to celebrate with you.</p>
+          <p class="footer-credit">Made with love ♥</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
