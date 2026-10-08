@@ -274,13 +274,18 @@ function animateWebsiteEntrance() {
   const heroContent = document.querySelector('.hero-content');
 
   if (nav) {
-    gsap.from(nav, {
-      y: -60,
-      opacity: 0,
-      duration: 1,
-      delay: 0.3,
-      ease: 'power3.out',
-    });
+    // Explicit fromTo so GSAP never leaves nav stuck invisible
+    gsap.fromTo(nav,
+      { y: -50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        delay: 0.2,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity', // Remove inline styles when done — CSS takes over
+      }
+    );
   }
 
   if (heroContent) {
