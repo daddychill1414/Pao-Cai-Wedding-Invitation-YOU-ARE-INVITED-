@@ -9,6 +9,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Prevent mobile address bar show/hide from triggering recalculations and snapping page up
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+  autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+});
+
 /* ─── STATE ─── */
 const state = {
   currentScreen: 'envelope',
@@ -813,9 +819,13 @@ function debounce(fn, delay) {
   };
 }
 
-// Handle resize for ScrollTrigger refresh
+// Handle resize for ScrollTrigger refresh only on width changes (orientation change)
+let lastWindowWidth = window.innerWidth;
 window.addEventListener('resize', debounce(() => {
-  ScrollTrigger.refresh();
+  if (window.innerWidth !== lastWindowWidth) {
+    lastWindowWidth = window.innerWidth;
+    ScrollTrigger.refresh();
+  }
 }, 250));
 
 /* ═══════════════════════════════════════════════════════════
