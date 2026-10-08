@@ -431,118 +431,98 @@ function initNavigation() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   CINEMATIC GALLERY SLIDER
+   WHOLE-SCREEN EXPAND & SHIFT GALLERY SLIDER
+   Exact Creative JS Coder Algorithm
    ═══════════════════════════════════════════════════════════ */
 function initGallery() {
-  const sliderEl = document.getElementById('cinematic-slider');
-  if (!sliderEl) return;
+  const slideDeck = document.getElementById('cinema-slide-deck');
+  const sliderContainer = document.getElementById('whole-screen-slider');
+  const nextBtn = document.getElementById('slider-arrow-next');
+  const prevBtn = document.getElementById('slider-arrow-prev');
+  const pillBtns = document.querySelectorAll('.gallery-pill[data-pill-cat]');
 
-  const slides = Array.from(sliderEl.querySelectorAll('.cinema-slide'));
-  const previewDeck = document.getElementById('cinema-preview-deck');
-  const prevBtn = document.getElementById('cinema-btn-prev');
-  const nextBtn = document.getElementById('cinema-btn-next');
-  const indicatorCurrent = document.getElementById('cinema-indicator-current');
-  const indicatorTotal = document.getElementById('cinema-indicator-total');
-  const filterBtns = document.querySelectorAll('.gallery-filter[data-cinema-filter]');
+  if (!slideDeck || !sliderContainer) return;
 
-  if (slides.length === 0) return;
-
-  let currentSlide = 0;
-  const totalSlides = slides.length;
-
-  if (indicatorTotal) {
-    indicatorTotal.textContent = String(totalSlides).padStart(2, '0');
-  }
-
-  // Extract metadata for previews
-  const slideMeta = slides.map((slide, idx) => {
-    const bgEl = slide.querySelector('.cinema-bg');
-    let bgUrl = '';
-    if (bgEl) {
-      const match = bgEl.style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/);
-      bgUrl = match ? match[1] : '';
-    }
-    const title = slide.querySelector('.cinema-title')?.textContent.trim() || `Memory 0${idx + 1}`;
-    const category = slide.dataset.category || 'proposal';
-    return { idx, bgUrl, title, category };
-  });
-
-  // Render floating preview cards on the right side (matching reference image)
-  function renderPreviewDeck() {
-    if (!previewDeck) return;
-    previewDeck.innerHTML = '';
-
-    // Show up to 3 upcoming slides in circular order
-    const maxPreviews = Math.min(3, totalSlides - 1);
-    for (let i = 1; i <= maxPreviews; i++) {
-      const upcomingIdx = (currentSlide + i) % totalSlides;
-      const data = slideMeta[upcomingIdx];
-
-      const card = document.createElement('div');
-      card.className = 'cinema-preview-card';
-      card.style.backgroundImage = `url('${data.bgUrl}')`;
-      card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', `View ${data.title}`);
-      card.setAttribute('title', `Switch to ${data.title}`);
-
-      const caption = document.createElement('span');
-      caption.className = 'preview-card-caption';
-      caption.textContent = data.title;
-      card.appendChild(caption);
-
-      card.addEventListener('click', (e) => {
-        e.stopPropagation();
-        goToSlide(upcomingIdx);
-      });
-
-      previewDeck.appendChild(card);
-    }
-  }
-
-  // Switch to slide
-  function goToSlide(index) {
-    if (index === currentSlide) return;
-
-    // Remove active from old slide
-    slides[currentSlide].classList.remove('active');
-
-    // Activate new slide
-    currentSlide = (index + totalSlides) % totalSlides;
-    slides[currentSlide].classList.add('active');
-
-    // Update indicator
-    if (indicatorCurrent) {
-      indicatorCurrent.textContent = String(currentSlide + 1).padStart(2, '0');
-    }
-
-    // Sync category filter buttons
-    const activeCategory = slides[currentSlide].dataset.category;
-    filterBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.cinemaFilter === activeCategory);
+  function updatePillState() {
+    const items = slideDeck.querySelectorAll('.item');
+    if (items.length < 2) return;
+    const activeItem = items[1]; // Item 2 is the active full-bleed slide
+    const cat = activeItem.dataset.category;
+    pillBtns.forEach(pill => {
+      pill.classList.toggle('active', pill.dataset.pillCat === cat);
     });
-
-    // Re-render preview cards stack
-    renderPreviewDeck();
   }
 
-  // Controls
-  nextBtn?.addEventListener('click', () => {
-    goToSlide((currentSlide + 1) % totalSlides);
+  function nextSlide() {
+    const items = slideDeck.querySelectorAll('.item');
+    if (items.length > 0) {
+      slideDeck.appendChild(items[0]);
+      updatePillState();
+    }
+  }
+
+  function prevSlide() {
+    const items = slideDeck.querySelectorAll('.item');
+    if (items.length > 0) {
+      slideDeck.prepend(items[items.length - 1]);
+      updatePillState();
+    }
+  }
+
+  nextBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    nextSlide();
     resetAutoAdvance();
   });
 
-  prevBtn?.addEventListener('click', () => {
-    goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+  prevBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    prevSlide();
     resetAutoAdvance();
   });
 
-  // Category filter tabs
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetCategory = btn.dataset.cinemaFilter;
-      const targetIndex = slideMeta.findIndex(m => m.category === targetCategory);
-      if (targetIndex !== -1) {
-        goToSlide(targetIndex);
+  // Clicking any preview card directly in the slide advances to it
+  slideDeck.addEventListener('click', (e) => {
+    // Allow clicking the "See more" link without intercepting
+    if (e.target.closest('.see-more-btn')) return;
+
+    const clickedItem = e.target.closest('.item');
+    if (!clickedItem) return;
+
+    const items = Array.from(slideDeck.querySelectorAll('.item'));
+    const clickedIdx = items.indexOf(clickedItem);
+
+    // If clicking a preview card (index 2, 3, etc.), advance until that card becomes active (index 1)
+    if (clickedIdx >= 2) {
+      const shiftsNeeded = clickedIdx - 1;
+      for (let i = 0; i < shiftsNeeded; i++) {
+        const currentItems = slideDeck.querySelectorAll('.item');
+        slideDeck.appendChild(currentItems[0]);
+      }
+      updatePillState();
+      resetAutoAdvance();
+    }
+  });
+
+  // Category pill filter buttons
+  pillBtns.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const targetCat = pill.dataset.pillCat;
+      const items = Array.from(slideDeck.querySelectorAll('.item'));
+      let foundIndex = -1;
+      for (let i = 1; i < items.length; i++) {
+        if (items[i].dataset.category === targetCat) {
+          foundIndex = i;
+          break;
+        }
+      }
+      if (foundIndex !== -1 && foundIndex !== 1) {
+        const shifts = foundIndex - 1;
+        for (let i = 0; i < shifts; i++) {
+          const currentItems = slideDeck.querySelectorAll('.item');
+          slideDeck.appendChild(currentItems[0]);
+        }
+        updatePillState();
         resetAutoAdvance();
       }
     });
@@ -552,34 +532,43 @@ function initGallery() {
   let touchStartX = 0;
   let touchStartY = 0;
 
-  sliderEl.addEventListener('touchstart', (e) => {
+  sliderContainer.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
     touchStartY = e.changedTouches[0].screenY;
   }, { passive: true });
 
-  sliderEl.addEventListener('touchend', (e) => {
+  sliderContainer.addEventListener('touchend', (e) => {
     const diffX = touchStartX - e.changedTouches[0].screenX;
     const diffY = touchStartY - e.changedTouches[0].screenY;
 
-    // Only swipe if horizontal motion exceeds vertical motion
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-      if (diffX > 0) {
-        goToSlide((currentSlide + 1) % totalSlides);
-      } else {
-        goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
-      }
+      if (diffX > 0) nextSlide();
+      else prevSlide();
       resetAutoAdvance();
     }
   }, { passive: true });
 
-  // Optional subtle auto-advance (every 7 seconds)
+  // Keyboard navigation when gallery section is in view
+  document.addEventListener('keydown', (e) => {
+    const gallerySection = document.getElementById('gallery');
+    if (!gallerySection) return;
+    const rect = gallerySection.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoAdvance();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoAdvance();
+      }
+    }
+  });
+
+  // Gentle auto-advance (every 7 seconds)
   let autoTimer = null;
   function startAutoAdvance() {
-    autoTimer = setInterval(() => {
-      goToSlide((currentSlide + 1) % totalSlides);
-    }, 7000);
+    autoTimer = setInterval(nextSlide, 7000);
   }
-
   function resetAutoAdvance() {
     if (autoTimer) {
       clearInterval(autoTimer);
@@ -587,11 +576,11 @@ function initGallery() {
     }
   }
 
-  sliderEl.addEventListener('mouseenter', () => clearInterval(autoTimer));
-  sliderEl.addEventListener('mouseleave', () => resetAutoAdvance());
+  sliderContainer.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  sliderContainer.addEventListener('mouseleave', () => resetAutoAdvance());
 
-  // Initial render
-  renderPreviewDeck();
+  // Initial state
+  updatePillState();
   startAutoAdvance();
 }
 

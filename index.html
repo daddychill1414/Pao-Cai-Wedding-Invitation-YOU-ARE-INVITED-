@@ -678,129 +678,127 @@
       </div>
     </section>
 
-    <!-- GALLERY / MEMORIES CINEMATIC SLIDER -->
-    <section id="gallery" class="section gallery-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-overline reveal-up">Memories</span>
-          <h2 class="section-title reveal-up">Our Gallery</h2>
-          <div class="section-line reveal-up"></div>
-          <p class="section-subtitle reveal-up">Two beautiful chapters of our story captured in time</p>
+    <!-- GALLERY / MEMORIES WHOLE-SCREEN CINEMATIC SLIDER -->
+    <section id="gallery" class="gallery-fullscreen-section">
+      <!-- Floating Top Header Overlay -->
+      <div class="gallery-top-overlay">
+        <div class="gallery-header-badge">✦ MEMORIES ✦</div>
+        <h2 class="gallery-header-title">Our Gallery</h2>
+        <div class="gallery-filter-pills">
+          <button class="gallery-pill active" data-pill-cat="proposal">✦ Proposal Pics</button>
+          <button class="gallery-pill" data-pill-cat="running">✦ Running Pics</button>
         </div>
+      </div>
 
-        <!-- Category Filter Tabs -->
-        <div class="gallery-filters reveal-up">
-          <button class="gallery-filter active" data-cinema-filter="proposal">✦ Proposal Pics</button>
-          <button class="gallery-filter" data-cinema-filter="running">✦ Running Pics</button>
-        </div>
+      <!-- Fullscreen Slider Container (Creative JS Coder Video Implementation) -->
+      <div class="whole-screen-slider" id="whole-screen-slider">
+        <div class="slide" id="cinema-slide-deck">
 
-        <!-- CINEMATIC SLIDER SHOWCASE -->
-        <div class="cinematic-slider-frame reveal-up">
-          <div class="cinematic-slider" id="cinematic-slider">
-
-            <!-- SLIDE 1: PROPOSAL (Main: IMG_4234) -->
-            <div class="cinema-slide active" data-slide-index="0" data-category="proposal">
-              <div class="cinema-bg" style="background-image: url('/Binondo photos-20261008T063001Z-1-001/Binondo photos/IMG_4234.jpg');"></div>
-              <div class="cinema-overlay"></div>
-              <div class="cinema-content">
-                <span class="cinema-badge">✦ CHAPTER 01 • BINONDO</span>
-                <h3 class="cinema-title">The Proposal</h3>
-                <p class="cinema-desc">A quiet afternoon through the historic streets of Binondo where prayers turned into lifelong promises, and she joyfully said yes.</p>
-                <div class="cinema-actions">
-                  <a href="/proposal-gallery.html" class="cinema-see-more-btn">
-                    <span>See more</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 2: RUNNING (Main: IMG_8728) -->
-            <div class="cinema-slide" data-slide-index="1" data-category="running">
-              <div class="cinema-bg" style="background-image: url('/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8728.JPG');"></div>
-              <div class="cinema-overlay"></div>
-              <div class="cinema-content">
-                <span class="cinema-badge">✦ CHAPTER 02 • INTRAMUROS</span>
-                <h3 class="cinema-title">Chasing Sunrises</h3>
-                <p class="cinema-desc">Miles shared side by side under golden morning light. Running along the ancient walls, keeping pace with each other's dreams.</p>
-                <div class="cinema-actions">
-                  <a href="/running-gallery.html" class="cinema-see-more-btn">
-                    <span>See more</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 3: SWEET PROPOSAL MOMENT (IMG_4187) -->
-            <div class="cinema-slide" data-slide-index="2" data-category="proposal">
-              <div class="cinema-bg" style="background-image: url('/Binondo photos-20261008T063001Z-1-001/Binondo photos/IMG_4187.jpg');"></div>
-              <div class="cinema-overlay"></div>
-              <div class="cinema-content">
-                <span class="cinema-badge">✦ CHAPTER 01 • MEMORIES</span>
-                <h3 class="cinema-title">Cherished Moments</h3>
-                <p class="cinema-desc">Walking hand in hand through Chinatown, savoring every laugh and quiet glance that brought our hearts to this day.</p>
-                <div class="cinema-actions">
-                  <a href="/proposal-gallery.html" class="cinema-see-more-btn">
-                    <span>See more</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 4: HISTORIC FINISH LINE (IMG_8818) -->
-            <div class="cinema-slide" data-slide-index="3" data-category="running">
-              <div class="cinema-bg" style="background-image: url('/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8818.JPG');"></div>
-              <div class="cinema-overlay"></div>
-              <div class="cinema-content">
-                <span class="cinema-badge">✦ CHAPTER 02 • FINISH LINE</span>
-                <h3 class="cinema-title">Stronger Together</h3>
-                <p class="cinema-desc">Every kilometer conquered is sweeter as partners. Celebrating endurance, dedication, and joy along the stone ramparts.</p>
-                <div class="cinema-actions">
-                  <a href="/running-gallery.html" class="cinema-see-more-btn">
-                    <span>See more</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- RIGHT-SIDE FLOATING THUMBNAIL PREVIEW CARDS (As in reference image) -->
-            <div class="cinema-preview-deck" id="cinema-preview-deck">
-              <!-- Dynamically managed in main.js -->
-            </div>
-
-            <!-- BOTTOM NAVIGATION CONTROLS -->
-            <div class="cinema-nav-controls">
-              <button class="cinema-nav-btn cinema-prev-btn" id="cinema-btn-prev" aria-label="Previous Slide">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-              </button>
-              <div class="cinema-slide-indicator">
-                <span id="cinema-indicator-current">01</span>
-                <span class="cinema-indicator-divider">/</span>
-                <span id="cinema-indicator-total">04</span>
-              </div>
-              <button class="cinema-nav-btn cinema-next-btn" id="cinema-btn-next" aria-label="Next Slide">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <!-- ITEM 1: THE PROPOSAL (Main: IMG_4234) -->
+          <div class="item" style="background-image: url('/Binondo photos-20261008T063001Z-1-001/Binondo photos/IMG_4234.jpg');" data-category="proposal">
+            <div class="content">
+              <span class="chapter-tag">✦ CHAPTER 01 • PROPOSAL</span>
+              <div class="name">THE PROPOSAL</div>
+              <div class="des">A quiet afternoon through the historic streets of Binondo where prayers turned into a lifetime promise, and she joyfully said yes.</div>
+              <a href="/proposal-gallery.html" class="see-more-btn">
+                <span>See more</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
-              </button>
+              </a>
             </div>
-
           </div>
+
+          <!-- ITEM 2: CHASING SUNRISES (Main: IMG_8728) -->
+          <div class="item" style="background-image: url('/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8728.JPG');" data-category="running">
+            <div class="content">
+              <span class="chapter-tag">✦ CHAPTER 02 • IN MOTION</span>
+              <div class="name">CHASING SUNRISES</div>
+              <div class="des">Miles shared side by side under golden morning light. Running along the ancient walls, keeping pace with each other's dreams.</div>
+              <a href="/running-gallery.html" class="see-more-btn">
+                <span>See more</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ITEM 3: CHERISHED MOMENTS (IMG_4187) -->
+          <div class="item" style="background-image: url('/Binondo photos-20261008T063001Z-1-001/Binondo photos/IMG_4187.jpg');" data-category="proposal">
+            <div class="content">
+              <span class="chapter-tag">✦ CHAPTER 01 • BINONDO</span>
+              <div class="name">CHERISHED MOMENTS</div>
+              <div class="des">Walking hand in hand through Chinatown, savoring every sweet laugh and gentle glance that brought our hearts to this day.</div>
+              <a href="/proposal-gallery.html" class="see-more-btn">
+                <span>See more</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ITEM 4: STRONGER TOGETHER (IMG_8818) -->
+          <div class="item" style="background-image: url('/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8818.JPG');" data-category="running">
+            <div class="content">
+              <span class="chapter-tag">✦ CHAPTER 02 • FINISH LINE</span>
+              <div class="name">STRONGER TOGETHER</div>
+              <div class="des">Every finish line is sweeter when conquered as partners. Celebrating endurance, dedication, and joy along the ramparts.</div>
+              <a href="/running-gallery.html" class="see-more-btn">
+                <span>See more</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ITEM 5: TIMELESS PROMISE (IMG_4221) -->
+          <div class="item" style="background-image: url('/Binondo photos-20261008T063001Z-1-001/Binondo photos/IMG_4221.jpg');" data-category="proposal">
+            <div class="content">
+              <span class="chapter-tag">✦ CHAPTER 01 • DEVOTION</span>
+              <div class="name">TIMELESS PROMISE</div>
+              <div class="des">Surrounded by old charm and warm golden light, marking the beginning of our forever journey.</div>
+              <a href="/proposal-gallery.html" class="see-more-btn">
+                <span>See more</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ITEM 6: GOLDEN MILES (IMG_8779) -->
+          <div class="item" style="background-image: url('/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8779.JPG');" data-category="running">
+            <div class="content">
+              <span class="chapter-tag">✦ CHAPTER 02 • GOLDEN HOUR</span>
+              <div class="name">GOLDEN MILES</div>
+              <div class="des">Catching the morning sun as we run toward our wedding day. United in stride, heart, and lifelong purpose.</div>
+              <a href="/running-gallery.html" class="see-more-btn">
+                <span>See more</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
         </div>
 
+        <!-- BOTTOM CONTROLS -->
+        <div class="whole-screen-buttons">
+          <button class="slider-arrow-btn prev" id="slider-arrow-prev" aria-label="Previous Slide">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button class="slider-arrow-btn next" id="slider-arrow-next" aria-label="Next Slide">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
