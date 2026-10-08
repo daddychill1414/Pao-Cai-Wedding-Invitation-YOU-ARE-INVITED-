@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,6 +7,16 @@
   <meta name="description" content="You are warmly invited to celebrate the wedding of Pao and Cai. A sunrise garden celebration at Por La Gracia Resort, Alfonso, Cavite." />
   <meta name="theme-color" content="#F0EAE0" />
 
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pao & Cai ✦ Wedding Celebration — December 18, 2026" />
+  <meta property="og:description" content="You are warmly invited to celebrate our sunrise wedding at Por La Gracia Resort, Alfonso, Cavite. December 18, 2026." />
+  <meta property="og:image" content="/images/SaveClip.App_509928587_17888665662272043_607505479076218957_n-2.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pao & Cai ✦ Wedding Celebration" />
+  <meta name="twitter:description" content="A sunrise celebration of love. December 18, 2026 at Por La Gracia Resort." />
+  <meta name="twitter:image" content="/images/SaveClip.App_509928587_17888665662272043_607505479076218957_n-2.jpg" />
+
   <!-- Favicon / Tab Bar Logo -->
   <link rel="icon" type="image/png" href="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" />
   <link rel="apple-touch-icon" href="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" />
@@ -14,7 +24,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Pinyon+Script&family=Aboreto&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/style.css" />
@@ -172,6 +182,7 @@
           <a href="#details" class="nav-link">Details</a>
           <a href="#timeline" class="nav-link">Schedule</a>
           <a href="#dresscode" class="nav-link">Dress Code</a>
+          <a href="#venue" class="nav-link">Venue</a>
           <a href="#gallery" class="nav-link">Gallery</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSesmtOVVug9d8r8fJIqa6F9OWNq6gi1jkw3E60hm1Naxfc8CA/viewform" target="_blank" rel="noopener" class="nav-link nav-cta">RSVP</a>
         </div>
@@ -185,6 +196,7 @@
         <a href="#details" class="mobile-nav-link">Details</a>
         <a href="#timeline" class="mobile-nav-link">Schedule</a>
         <a href="#dresscode" class="mobile-nav-link">Dress Code</a>
+        <a href="#venue" class="mobile-nav-link">Venue</a>
         <a href="#gallery" class="mobile-nav-link">Gallery</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSesmtOVVug9d8r8fJIqa6F9OWNq6gi1jkw3E60hm1Naxfc8CA/viewform" target="_blank" rel="noopener" class="mobile-nav-link mobile-nav-cta">RSVP</a>
       </div>
@@ -209,6 +221,29 @@
         <div class="hero-divider reveal-up"></div>
         <p class="hero-tagline reveal-up">A Sunrise Celebration of Love</p>
         <p class="hero-venue-line reveal-up">Por La Gracia Resort · Alfonso, Cavite</p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown reveal-up" aria-label="Countdown to wedding day">
+          <div class="countdown-item">
+            <span id="countdown-days" class="countdown-value">--</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-separator">✦</div>
+          <div class="countdown-item">
+            <span id="countdown-hours" class="countdown-value">--</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-separator">✦</div>
+          <div class="countdown-item">
+            <span id="countdown-mins" class="countdown-value">--</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-separator">✦</div>
+          <div class="countdown-item">
+            <span id="countdown-secs" class="countdown-value">--</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
       </div>
       <div class="hero-scroll-indicator">
         <span>Scroll</span>
@@ -228,21 +263,12 @@
         <div class="story-grid">
           <div class="story-image-col reveal-up">
             <div class="story-image-frame">
-              <img src="/images/831436053_2466880237172198_5599499902861501884_n.jpg" alt="Pao and Cai together" class="story-img" loading="lazy" />
+              <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8860.jpg" alt="Pao and Cai together" class="story-img" loading="lazy" />
             </div>
           </div>
           <div class="story-text-col">
             <div class="story-block reveal-up">
-              <span class="story-label">How We Met</span>
-              <p class="story-text">Some love stories begin with a grand gesture, but ours started with a simple hello. A chance encounter that turned into lingering conversations, shared laughter, and a connection that felt like it had always been there — waiting for the right moment to unfold.</p>
-            </div>
-            <div class="story-block reveal-up">
-              <span class="story-label">Growing Together</span>
-              <p class="story-text">Through every sunrise and sunset, every ordinary day turned extraordinary — we found in each other not just a partner, but a best friend. We've built something beautiful together, one quiet moment at a time.</p>
-            </div>
-            <div class="story-block reveal-up">
-              <span class="story-label">Forever Begins</span>
-              <p class="story-text">And now, as the sun rises on this new chapter of our lives, we invite you to witness the moment we say "I do." Because every great love story deserves an audience — and ours wouldn't be complete without you.</p>
+              <p class="story-text">Our story began in a place where we both found something greater than ourselves—our church. Through every season, we’ve learned to choose each other, keep God at the center, and cherish the journey we’ve shared, and now we’re excited to begin our next chapter together.</p>
             </div>
           </div>
         </div>
@@ -273,10 +299,10 @@
                 <path d="M12 6V12L16 14"/>
               </svg>
             </div>
-            <h3 class="storyboard-title">Guest Arrival</h3>
-            <span class="storyboard-time">6:00 AM</span>
+            <h3 class="storyboard-title">Call Time</h3>
+            <span class="storyboard-time">5:30 AM</span>
             <p class="storyboard-desc">Step into the morning garden air as soft music plays. Settle into your seats as the first light breaks over Cavite.</p>
-            <div class="storyboard-tag">Please arrive by 6:00 AM</div>
+            <div class="storyboard-tag">Please arrive by 5:30 AM</div>
           </div>
 
           <!-- Step 2: Sunrise Ceremony -->
@@ -321,7 +347,7 @@
               </svg>
             </div>
             <h3 class="storyboard-title">Breakfast Reception</h3>
-            <span class="storyboard-time">8:20 AM</span>
+            <span class="storyboard-time">8:30 AM</span>
             <p class="storyboard-desc">Indulge in a warm morning feast, freshly brewed coffee, and heartfelt toasts celebrating the newlyweds.</p>
             <div class="storyboard-tag">Feast & Celebration</div>
           </div>
@@ -438,9 +464,9 @@
             <!-- Timeline Table -->
             <div class="tl-table">
               <div class="tl-row">
-                <span class="tl-time">6:00 AM</span>
+                <span class="tl-time">5:30 AM</span>
                 <span class="tl-divider">—</span>
-                <span class="tl-event">GUEST ARRIVAL</span>
+                <span class="tl-event">Call TIme</span>
               </div>
               <div class="tl-row">
                 <span class="tl-time">6:30 AM</span>
@@ -448,27 +474,17 @@
                 <span class="tl-event">WEDDING CEREMONY</span>
               </div>
               <div class="tl-row">
-                <span class="tl-time">7:30 AM</span>
-                <span class="tl-divider">—</span>
-                <span class="tl-event">COCKTAIL &amp; GARDEN PHOTOS</span>
-              </div>
-              <div class="tl-row">
                 <span class="tl-time">8:00 AM</span>
                 <span class="tl-divider">—</span>
-                <span class="tl-event">BREAKFAST RECEPTION</span>
+                <span class="tl-event">GARDEN PHOTOS</span>
               </div>
               <div class="tl-row">
                 <span class="tl-time">8:30 AM</span>
                 <span class="tl-divider">—</span>
-                <span class="tl-event">TOASTS &amp; FIRST DANCE</span>
+                <span class="tl-event">BREAKFAST RECEPTION</span>
               </div>
               <div class="tl-row">
-                <span class="tl-time">9:00 AM</span>
-                <span class="tl-divider">—</span>
-                <span class="tl-event">CAKE CUTTING</span>
-              </div>
-              <div class="tl-row">
-                <span class="tl-time">9:20 AM</span>
+                <span class="tl-time">9:30 AM</span>
                 <span class="tl-divider">—</span>
                 <span class="tl-event">UWIAN NA PO!</span>
               </div>
@@ -553,7 +569,7 @@
               </svg>
             </div>
             <h3>Be on Time</h3>
-            <p>This is a sunrise ceremony. Please arrive by 6:00 AM so we can begin promptly.</p>
+            <p>This is a sunrise ceremony. Please arrive by 5:45 AM so we can begin promptly.</p>
           </div>
           <div class="reminder-card reveal-up">
             <div class="reminder-icon">
@@ -590,6 +606,73 @@
             </div>
             <h3>RSVP</h3>
             <p>Kindly confirm your attendance so we can prepare for your arrival. We look forward to celebrating with you!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE / MAP -->
+    <section id="venue" class="section venue-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline reveal-up">The Venue</span>
+          <h2 class="section-title reveal-up">How to Get There</h2>
+          <div class="section-line reveal-up"></div>
+        </div>
+
+        <div class="venue-content">
+          <div class="venue-info-card reveal-up">
+            <div class="venue-icon">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.03 7.03 1 12 1S21 5.03 21 10Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <h3 class="venue-name">Por La Gracia Resort</h3>
+            <p class="venue-address">Alfonso, Cavite, Philippines</p>
+            <div class="venue-divider"></div>
+            <div class="venue-detail-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <path d="M16 2V6M8 2V6M3 10H21"/>
+              </svg>
+              <span>December 18, 2026 • Friday</span>
+            </div>
+            <div class="venue-detail-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6V12L16 14"/>
+              </svg>
+              <span>Arrival by 6:00 AM</span>
+            </div>
+            <div class="venue-buttons">
+              <a href="https://maps.google.com/?q=Por+La+Gracia+Resort+Alfonso+Cavite" target="_blank" rel="noopener" class="venue-btn venue-btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.03 7.03 1 12 1S21 5.03 21 10Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Google Maps</span>
+              </a>
+              <a href="https://waze.com/ul?q=Por+La+Gracia+Resort+Alfonso+Cavite" target="_blank" rel="noopener" class="venue-btn venue-btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/>
+                </svg>
+                <span>Open in Waze</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="venue-map-wrapper reveal-up">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3868.0!2d120.85!3d14.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA5JzAwLjAiTiAxMjDCsDUxJzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1696550000000!5m2!1sen!2sph"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Por La Gracia Resort location map">
+            </iframe>
           </div>
         </div>
       </div>

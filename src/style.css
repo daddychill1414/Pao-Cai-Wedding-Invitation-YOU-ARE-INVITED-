@@ -432,9 +432,6 @@ button {
   background: #FFFFFF;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
-
-  transform: translateY(20px);
-  animation: fadeInUp 1s var(--ease-out) 0.6s forwards;
 }
 
 @media (min-width: 768px) {
@@ -1130,6 +1127,7 @@ button {
 .mobile-nav-overlay.active .mobile-nav-link:nth-child(4) { animation-delay: 0.25s; }
 .mobile-nav-overlay.active .mobile-nav-link:nth-child(5) { animation-delay: 0.3s; }
 .mobile-nav-overlay.active .mobile-nav-link:nth-child(6) { animation-delay: 0.35s; }
+.mobile-nav-overlay.active .mobile-nav-link:nth-child(7) { animation-delay: 0.4s; }
 
 .mobile-nav-cta {
   font-family: var(--font-display);
@@ -1429,7 +1427,7 @@ button {
 
 .story-text {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   line-height: 1.9;
   color: var(--color-text-muted);
   font-weight: 300;
@@ -1918,23 +1916,7 @@ button {
   line-height: 1.6;
 }
 
-.dresscode-card-icon {
-  color: var(--color-gold);
-  margin-bottom: var(--space-sm);
-}
-
-.dresscode-card h4 {
-  font-family: var(--font-script);
-  font-size: 1.3rem;
-  color: var(--color-espresso);
-  margin-bottom: var(--space-xs);
-}
-
-.dresscode-card p {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
+/* Duplicate dresscode-card rules removed — see lines 1892-1919 */
 
 /* Dress Code Reference Image */
 .dresscode-reference {
@@ -2379,6 +2361,228 @@ button {
 .footer-credit {
   font-size: 0.7rem;
   color: rgba(250, 246, 240, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COUNTDOWN TIMER
+   ═══════════════════════════════════════════════════════════ */
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+
+.countdown-value {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  color: #1F140C;
+  line-height: 1;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.02em;
+}
+
+.countdown-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+
+.countdown-separator {
+  font-size: 0.7rem;
+  color: var(--color-gold);
+  opacity: 0.6;
+  padding-top: 0;
+  align-self: flex-start;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 480px) {
+  .countdown {
+    gap: 0.6rem;
+  }
+  .countdown-item {
+    min-width: 55px;
+  }
+  .countdown-separator {
+    margin-top: 0.4rem;
+  }
+}
+
+.countdown-complete {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--color-espresso);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VENUE / MAP SECTION
+   ═══════════════════════════════════════════════════════════ */
+.venue-section {
+  background: var(--color-cream);
+}
+
+.venue-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .venue-content {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: stretch;
+  }
+}
+
+.venue-info-card {
+  background: #FFFDF8;
+  border: 1px solid rgba(92, 64, 51, 0.15);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(60, 42, 30, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.venue-icon {
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+  animation: venuePin 3s ease-in-out infinite;
+}
+
+@keyframes venuePin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.venue-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--color-espresso);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.venue-address {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.venue-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-champagne);
+  margin: 0 auto var(--space-md);
+}
+
+.venue-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+}
+
+.venue-detail-row svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.venue-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  justify-content: center;
+}
+
+.venue-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  transition: all var(--duration-med) var(--ease-spring);
+  text-decoration: none;
+}
+
+.venue-btn-primary {
+  background: var(--color-espresso);
+  color: var(--color-cream);
+  border: 1px solid var(--color-espresso);
+}
+
+.venue-btn-primary:hover {
+  background: var(--color-brown);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+.venue-btn-secondary {
+  background: transparent;
+  color: var(--color-espresso);
+  border: 1px solid var(--color-border-strong);
+}
+
+.venue-btn-secondary:hover {
+  background: var(--color-espresso);
+  color: var(--color-cream);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+.venue-map-wrapper {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  min-height: 350px;
+  position: relative;
+  background: var(--color-bg-alt);
+}
+
+.venue-map-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .venue-map-wrapper {
+    min-height: 280px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════

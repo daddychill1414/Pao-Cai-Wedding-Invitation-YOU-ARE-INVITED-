@@ -27,8 +27,73 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initScrollReveal();
   initHeroParallax();
+  initCountdown();
   checkReturnVisitor();
 });
+
+/* ═══════════════════════════════════════════════════════════
+   COUNTDOWN TIMER
+   ═══════════════════════════════════════════════════════════ */
+function initCountdown() {
+  const daysEl = document.getElementById('countdown-days');
+  const hoursEl = document.getElementById('countdown-hours');
+  const minsEl = document.getElementById('countdown-mins');
+  const secsEl = document.getElementById('countdown-secs');
+
+  if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+  // Wedding date: December 18, 2026, 6:00 AM PHT (UTC+8)
+  const weddingDate = new Date('2026-12-18T06:00:00+08:00');
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = weddingDate - now;
+
+    if (diff <= 0) {
+      // Wedding day or past
+      const countdown = document.getElementById('countdown');
+      if (countdown) {
+        countdown.innerHTML = '<p class="countdown-complete">Today is the day! ✦ Celebrating Love</p>';
+        countdown.style.textAlign = 'center';
+      }
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const pad = (n) => String(n).padStart(2, '0');
+
+    // Animate digits if value changed
+    animateDigit(daysEl, String(days));
+    animateDigit(hoursEl, pad(hours));
+    animateDigit(minsEl, pad(mins));
+    animateDigit(secsEl, pad(secs));
+  }
+
+  function animateDigit(el, newValue) {
+    if (el.textContent === newValue) return;
+    gsap.to(el, {
+      y: -4,
+      opacity: 0.4,
+      duration: 0.15,
+      ease: 'power2.in',
+      onComplete: () => {
+        el.textContent = newValue;
+        gsap.fromTo(el,
+          { y: 4, opacity: 0.4 },
+          { y: 0, opacity: 1, duration: 0.25, ease: 'power2.out' }
+        );
+      },
+    });
+  }
+
+  // Initial update and start interval
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
 
 /* ═══════════════════════════════════════════════════════════
    FLOATING PARTICLES
