@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Chasing Sunrises ✦ Running in Intramuros | Pao & Cai</title>
+  <meta name="description" content="Miles shared side by side through the historic walls of Intramuros. Exploring the running memories of Pao and Cai." />
+  <meta name="theme-color" content="#F0EAE0" />
+
+  <!-- Favicon / Tab Bar Logo -->
+  <link rel="icon" type="image/png" href="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" />
+  <link rel="apple-touch-icon" href="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="gallery-subpage">
+
+  <!-- NOISE OVERLAY -->
+  <svg class="noise-overlay" aria-hidden="true">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+  </svg>
+
+  <!-- STICKY TOP NAV -->
+  <header class="subpage-nav">
+    <div class="subpage-nav-inner">
+      <a href="/#gallery" class="subpage-back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Back to Invitation</span>
+      </a>
+
+      <a href="/" class="subpage-nav-logo">
+        <img src="/images/Screenshot_2026-10-05_234602-removebg-preview (1).png" alt="Pao & Cai Monogram" />
+      </a>
+
+      <div class="subpage-nav-actions">
+        <a href="/proposal-gallery.html" class="subpage-next-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <span>Proposal Pics</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH FULL-BLEED MAIN PHOTO (IMG_8728) -->
+  <section class="gallery-hero">
+    <div class="gallery-hero-bg">
+      <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8728.JPG" alt="Running in Intramuros - Pao & Cai" class="gallery-hero-img" />
+      <div class="gallery-hero-overlay"></div>
+    </div>
+    <div class="gallery-hero-content container">
+      <span class="gallery-hero-badge">✦ Memories • Chapter II</span>
+      <h1 class="gallery-hero-title">Chasing Sunrises</h1>
+      <p class="gallery-hero-location">Intramuros, Manila • Strides & Smiles</p>
+      <div class="gallery-hero-divider"></div>
+      <p class="gallery-hero-caption">
+        Miles clocked together along the ancient Spanish walls. Sunrise light, synchronized steps, and laughter through every kilometer.
+      </p>
+    </div>
+  </section>
+
+  <!-- PHOTO GRID SECTION -->
+  <main class="gallery-main container">
+    <div class="gallery-toolbar">
+      <div class="gallery-count-badge">
+        <span>Running Collection Highlights</span>
+      </div>
+      <p class="gallery-hint">Tap any photo to expand fullscreen</p>
+    </div>
+
+    <!-- MASONRY GRID OF INTRAMUROS RUNNING PHOTOS -->
+    <div class="gallery-grid" id="photo-grid">
+      <div class="photo-card photo-card--hero" data-index="0">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8728.JPG" alt="Main running photo - Pao & Cai" loading="eager" />
+        <div class="photo-card-info">
+          <span class="photo-card-tag">Main Feature</span>
+          <span class="photo-card-caption">Pacing Our Journey Side by Side</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="1">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8682.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">First Light at the Walls</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--tall" data-index="2">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8725.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Morning Warm-up</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="3">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8734.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Ready for the Mile</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--tall" data-index="4">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8754.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Cobblestone Strides</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="5">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8766.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Shared Heartbeats</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--wide" data-index="6">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8779.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Golden Hour Rhythm</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="7">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8783.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Pausing for Breath</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--tall" data-index="8">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8791.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Joy Along the Ramparts</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="9">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8818.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Crossing Finish Lines Together</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="10">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8820.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Unmatched Partnership</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--wide" data-index="11">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8860.jpg" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">A Peaceful Post-Run Moment</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="12">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8871.jpg" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Warmth & Companionship</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--tall" data-index="13">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8907.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Historic Corridors</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="14">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8914.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Never Giving Up</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--wide" data-index="15">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8928.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Steps in Harmony</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="16">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8972.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Endless Horizons</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--tall" data-index="17">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_8990.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Golden Sunlight Glow</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="18">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_9001.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Stronger Together</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="19">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_9011.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Running Towards Forever</span>
+        </div>
+      </div>
+
+      <div class="photo-card photo-card--tall" data-index="20">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_9031.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Grateful Smiles</span>
+        </div>
+      </div>
+
+      <div class="photo-card" data-index="21">
+        <img src="/Intramuros-20261008T062922Z-1-001/Intramuros/IMG_9042.JPG" alt="Running in Intramuros" loading="lazy" />
+        <div class="photo-card-info">
+          <span class="photo-card-caption">Love in Motion</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER NAVIGATION / BOTTOM CARD -->
+    <section class="gallery-chapter-switch">
+      <div class="chapter-card">
+        <div class="chapter-card-inner">
+          <span class="chapter-card-overline">Previous Collection</span>
+          <h3 class="chapter-card-title">The Proposal in Binondo</h3>
+          <p class="chapter-card-text">Revisit the intimate moments and the question that started this new chapter.</p>
+          <a href="/proposal-gallery.html" class="chapter-card-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Explore Proposal Pics</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX VIEWER -->
+  <div id="subpage-lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" aria-label="Close photo viewer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6L18 18"/>
+      </svg>
+    </button>
+    <button class="lightbox-prev" aria-label="Previous photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18L9 12L15 6"/>
+      </svg>
+    </button>
+    <button class="lightbox-next" aria-label="Next photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18L15 12L9 6"/>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img id="subpage-lightbox-img" src="" alt="" />
+      <p id="subpage-lightbox-caption" class="subpage-lightbox-caption"></p>
+    </div>
+    <div class="lightbox-counter">
+      <span id="subpage-lightbox-current">1</span> / <span id="subpage-lightbox-total">22</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-ornament">&#10022;</div>
+        <div class="footer-names">
+          <span class="script-name">Pao</span>
+          <span class="ampersand">&</span>
+          <span class="script-name">Cai</span>
+        </div>
+        <p class="footer-tagline">A Sunrise Celebration of Love • December 18, 2026</p>
+        <div class="footer-divider"></div>
+        <p class="footer-note"><a href="/#gallery" style="color: inherit; text-decoration: underline;">Return to Invitation & RSVP</a></p>
+        <p class="footer-credit">Made with love ♥</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    // Lightbox interactivity for subpage
+    const cards = Array.from(document.querySelectorAll('.photo-card'));
+    const lightbox = document.getElementById('subpage-lightbox');
+    const lightboxImg = document.getElementById('subpage-lightbox-img');
+    const lightboxCaption = document.getElementById('subpage-lightbox-caption');
+    const lightboxCurrent = document.getElementById('subpage-lightbox-current');
+    const lightboxTotal = document.getElementById('subpage-lightbox-total');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    const nextBtn = lightbox.querySelector('.lightbox-next');
+
+    let currentIndex = 0;
+    const photos = cards.map(c => ({
+      src: c.querySelector('img').getAttribute('src'),
+      alt: c.querySelector('img').getAttribute('alt'),
+      caption: c.querySelector('.photo-card-caption')?.textContent || 'Pao & Cai'
+    }));
+
+    if (lightboxTotal) lightboxTotal.textContent = photos.length;
+
+    function showPhoto(idx) {
+      currentIndex = (idx + photos.length) % photos.length;
+      const p = photos[currentIndex];
+      lightboxImg.style.opacity = '0';
+      lightboxImg.src = p.src;
+      lightboxImg.alt = p.alt;
+      lightboxCaption.textContent = p.caption;
+      lightboxCurrent.textContent = currentIndex + 1;
+      setTimeout(() => {
+        lightboxImg.style.opacity = '1';
+      }, 50);
+    }
+
+    function openLightbox(idx) {
+      showPhoto(idx);
+      lightbox.classList.add('active');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    }
+
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', () => openLightbox(idx));
+    });
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', () => showPhoto(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => showPhoto(currentIndex + 1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+      if (e.key === 'ArrowRight') showPhoto(currentIndex + 1);
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) showPhoto(currentIndex + 1);
+        else showPhoto(currentIndex - 1);
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>

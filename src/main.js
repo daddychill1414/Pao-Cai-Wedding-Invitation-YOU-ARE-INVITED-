@@ -431,54 +431,168 @@ function initNavigation() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   GALLERY
+   CINEMATIC GALLERY SLIDER
    ═══════════════════════════════════════════════════════════ */
 function initGallery() {
-  const filters = document.querySelectorAll('.gallery-filter');
-  const items = document.querySelectorAll('.gallery-item');
+  const sliderEl = document.getElementById('cinematic-slider');
+  if (!sliderEl) return;
 
-  // Collect gallery images for lightbox
-  items.forEach((item, index) => {
-    const img = item.querySelector('img');
-    if (img) {
-      state.galleryImages.push({
-        src: img.src,
-        alt: img.alt,
-        category: item.dataset.category,
-      });
+  const slides = Array.from(sliderEl.querySelectorAll('.cinema-slide'));
+  const previewDeck = document.getElementById('cinema-preview-deck');
+  const prevBtn = document.getElementById('cinema-btn-prev');
+  const nextBtn = document.getElementById('cinema-btn-next');
+  const indicatorCurrent = document.getElementById('cinema-indicator-current');
+  const indicatorTotal = document.getElementById('cinema-indicator-total');
+  const filterBtns = document.querySelectorAll('.gallery-filter[data-cinema-filter]');
+
+  if (slides.length === 0) return;
+
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  if (indicatorTotal) {
+    indicatorTotal.textContent = String(totalSlides).padStart(2, '0');
+  }
+
+  // Extract metadata for previews
+  const slideMeta = slides.map((slide, idx) => {
+    const bgEl = slide.querySelector('.cinema-bg');
+    let bgUrl = '';
+    if (bgEl) {
+      const match = bgEl.style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/);
+      bgUrl = match ? match[1] : '';
     }
+    const title = slide.querySelector('.cinema-title')?.textContent.trim() || `Memory 0${idx + 1}`;
+    const category = slide.dataset.category || 'proposal';
+    return { idx, bgUrl, title, category };
   });
 
-  // Filter functionality
-  filters.forEach(filter => {
-    filter.addEventListener('click', () => {
-      const category = filter.dataset.filter;
+  // Render floating preview cards on the right side (matching reference image)
+  function renderPreviewDeck() {
+    if (!previewDeck) return;
+    previewDeck.innerHTML = '';
 
-      // Update active filter
-      filters.forEach(f => f.classList.remove('active'));
-      filter.classList.add('active');
+    // Show up to 3 upcoming slides in circular order
+    const maxPreviews = Math.min(3, totalSlides - 1);
+    for (let i = 1; i <= maxPreviews; i++) {
+      const upcomingIdx = (currentSlide + i) % totalSlides;
+      const data = slideMeta[upcomingIdx];
 
-      // Filter items
-      items.forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
-          item.classList.remove('hidden');
-          gsap.fromTo(item,
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
-          );
-        } else {
-          item.classList.add('hidden');
-        }
+      const card = document.createElement('div');
+      card.className = 'cinema-preview-card';
+      card.style.backgroundImage = `url('${data.bgUrl}')`;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', `View ${data.title}`);
+      card.setAttribute('title', `Switch to ${data.title}`);
+
+      const caption = document.createElement('span');
+      caption.className = 'preview-card-caption';
+      caption.textContent = data.title;
+      card.appendChild(caption);
+
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        goToSlide(upcomingIdx);
       });
+
+      previewDeck.appendChild(card);
+    }
+  }
+
+  // Switch to slide
+  function goToSlide(index) {
+    if (index === currentSlide) return;
+
+    // Remove active from old slide
+    slides[currentSlide].classList.remove('active');
+
+    // Activate new slide
+    currentSlide = (index + totalSlides) % totalSlides;
+    slides[currentSlide].classList.add('active');
+
+    // Update indicator
+    if (indicatorCurrent) {
+      indicatorCurrent.textContent = String(currentSlide + 1).padStart(2, '0');
+    }
+
+    // Sync category filter buttons
+    const activeCategory = slides[currentSlide].dataset.category;
+    filterBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.cinemaFilter === activeCategory);
+    });
+
+    // Re-render preview cards stack
+    renderPreviewDeck();
+  }
+
+  // Controls
+  nextBtn?.addEventListener('click', () => {
+    goToSlide((currentSlide + 1) % totalSlides);
+    resetAutoAdvance();
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+    resetAutoAdvance();
+  });
+
+  // Category filter tabs
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetCategory = btn.dataset.cinemaFilter;
+      const targetIndex = slideMeta.findIndex(m => m.category === targetCategory);
+      if (targetIndex !== -1) {
+        goToSlide(targetIndex);
+        resetAutoAdvance();
+      }
     });
   });
 
-  // Click to open lightbox
-  items.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      openLightbox(parseInt(item.dataset.index, 10));
-    });
-  });
+  // Touch swipe support for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  sliderEl.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  sliderEl.addEventListener('touchend', (e) => {
+    const diffX = touchStartX - e.changedTouches[0].screenX;
+    const diffY = touchStartY - e.changedTouches[0].screenY;
+
+    // Only swipe if horizontal motion exceeds vertical motion
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        goToSlide((currentSlide + 1) % totalSlides);
+      } else {
+        goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+      }
+      resetAutoAdvance();
+    }
+  }, { passive: true });
+
+  // Optional subtle auto-advance (every 7 seconds)
+  let autoTimer = null;
+  function startAutoAdvance() {
+    autoTimer = setInterval(() => {
+      goToSlide((currentSlide + 1) % totalSlides);
+    }, 7000);
+  }
+
+  function resetAutoAdvance() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      startAutoAdvance();
+    }
+  }
+
+  sliderEl.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  sliderEl.addEventListener('mouseleave', () => resetAutoAdvance());
+
+  // Initial render
+  renderPreviewDeck();
+  startAutoAdvance();
 }
 
 /* ═══════════════════════════════════════════════════════════
